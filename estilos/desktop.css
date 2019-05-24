@@ -1,0 +1,288 @@
+body{
+    font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    background-color: #ededed;
+    color: white;
+}
+
+main{
+    background: url(../imagens/background.png) center center no-repeat fixed;
+    background-size: cover;
+    overflow: none;
+    width: 1360px;
+    height: 98.5vh;
+    min-height: 920px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 10px #000;
+    margin-bottom: -40px;
+}
+
+.esquerda{
+    position: absolute;
+    left: 0;
+    width: 680px;
+    height: 450px;
+    margin-top: -135px;
+}
+
+#titulo{
+    margin: 100px auto -50px auto;
+    width: 640px;
+    font-size: 17px;
+    text-align: center;
+    border: white solid 1px;
+    text-shadow: 0 1px 1px #4c4c4c;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#mortes {
+    font-size: 60px;
+    text-align: center;
+    color: #2f2f2f;
+    margin: -40px;
+}
+
+.logo{
+    position: relative;
+    width: 500px;
+    height: 135px;
+    left: 90px;
+    top: 27em;
+}
+
+#logoImg{
+    width: 500px;
+    height: 135px;
+}
+
+.progressBar{
+    position: relative;
+    width: 400px;
+    margin: 0 auto;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 4px;
+    margin-top: -75px;
+}
+
+.progress{
+    position: relative;
+    top: 2px;
+    left: 2px;
+    max-width: 396px;
+    height: 20px;
+    width: 0%;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: 0.3s;
+}
+
+#filtros{
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    transition: 0.3s;
+    text-shadow: 0 1px 1px #4c4c4c;
+
+}
+
+.direita{
+    float: right;
+    width: 680px;
+    height: 600px;
+    margin-top: -135px;
+}
+
+#imagemFundo{
+    height: 600px;
+    width: 700px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    opacity: 0.9;
+}
+
+#busca{
+    position: relative;
+    padding-top: 110px;
+    padding-bottom: 2px;
+    margin: 0 auto;
+    font-size: 17px;
+    width: 150px;
+    text-align: center;
+    border-bottom: white solid 1px;
+    z-index: 1;
+}
+
+.porRegiao{
+    float: left;
+    position: relative;
+    width: 340px;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 17px;
+    padding-right: 10px;
+    z-index: 1;
+}
+
+.subtitulo{
+    font-size: 14px;
+}
+
+.porTipo{
+   float: left;
+    margin-top: 15px;
+    position: relative;
+}
+
+.porTipo p{
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 17px;
+}
+.porTempo{
+    clear: both;
+    margin: 0 auto;
+    text-align: center;
+    width: 380px;
+    padding-top: 0px;
+    position: relative;
+}
+
+.porTempo p{
+    font-size: 17px;
+}
+
+/* Botão de confirmar */
+
+#botao{
+    width: 180px;
+    height: 30px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+#botaoConfirmar {
+    -webkit-border-radius: 34;
+    -moz-border-radius: 34;
+    border-radius: 34px;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 10px 50px 10px 50px;
+    background: #2f2f2f;
+    text-decoration: none;
+    text-align: center;
+    clear: both;
+    margin: 0 auto;
+    position: relative;
+    border: none;
+}
+
+#botaoConfirmar:hover {
+  transition: 0.1s;
+  background: #4d4d4d;
+  text-decoration: none;
+}
+
+
+/* Checkmarks */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-bottom: 12px;
+}
+
+#containerTempo{
+  display: inline;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+    user-select: none;
+    padding-right: 35px;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+    border: white solid 1px;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 7px;
+  top: 4px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.mapdid path{
+    fill: #4d4d4d;
+    transition: fill 0.5s;
+
+}
+
+#texto{
+  position: absolute;
+  height: 240px;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0 60px 40px 60px;
+  bottom: 0;
+  font-size: 17px;
+  text-align: justify;
+
+}
+
+footer{
+  text-align: center;
+  position: relative;
+  background-color: #2f2f2f;
+  width: 1360px;
+  margin: 0 auto;
+  height: 40px;
+}
+
+footer p{
+  position: relative;
+  top: 30%;
+}
